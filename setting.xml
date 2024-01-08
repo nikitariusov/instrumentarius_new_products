@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<prices>
+    <company>
+        <company_name>sigma</company_name>
+        <link>https://sigma.ua/bitrix/catalog_export/marketsigma.php</link>
+        <offers>shop/offers/offer</offers>
+        <item_available>available</item_available>
+        <vendor_Code>vendorCode</vendor_Code>
+        <price>price</price>
+
+        <name>name</name>
+        <descr>description</descr>
+        <currency>currencyId</currency>
+        <category_id>categoryId</category_id>
+        <image>picture</image>
+        <available>available</available>
+        <brand>vendor</brand>
+    </company>
+</prices>
