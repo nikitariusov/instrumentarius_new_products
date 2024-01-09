@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <prices>
     <company>
-        <company_name>nowa</company_name>
-        <link>https://nowatools.com.ua/index.php?route=extension/feed/prom</link>
-        <offers>items/item</offers>
+        <company_name>vitals</company_name>
+        <link>https://vitals.ua/ru/index.php?route=extension/feed/prom</link>
+        <offers>shop/items/item</offers>
         <item_available>available</item_available>
         <vendor_Code>vendorCode</vendor_Code>
         <price>price</price>
@@ -13,6 +13,7 @@
         <currency/>
         <category_id>categoryId</category_id>
         <image>picture</image>
+        <parameters>param</parameters>
         <brand/>
     </company>
 </prices>

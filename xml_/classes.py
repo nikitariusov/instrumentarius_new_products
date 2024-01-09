@@ -1,7 +1,7 @@
 class Product_item:
     """Данные товара"""
     def __init__(self, item_available, product_id, price, name, descr, currency,
-                 category_id, image, brand):
+                 category_id, image, parameters, brand):
         self.item_available = item_available
         self.product_id = product_id
         self.price = price
@@ -10,6 +10,7 @@ class Product_item:
         self.currency = currency
         self.category_id = category_id
         self.image = image
+        self.parameters = parameters
         self.brand = brand
 
     def log(self):
@@ -22,5 +23,6 @@ class Product_item:
               f'currency: {self.currency}\n'
               f'category_id: {self.category_id}\n'
               f'image: {self.image}\n'
+              f'parameters: {self.parameters}\n'
               f'brand: {self.brand}\n'
               )

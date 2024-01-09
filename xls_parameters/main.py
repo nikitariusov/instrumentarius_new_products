@@ -20,6 +20,7 @@ def get_settings():
                 i.find('currency').text,
                 i.find('category_id').text,
                 i.find('image').text,
+                i.find('parameters').text,
                 i.find('brand').text
             ))
         return setting

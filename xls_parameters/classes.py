@@ -1,7 +1,7 @@
 class Params:
     """Параметры для работы парсера"""
     def __init__(self, company, link, offers, item_available, product_id, price, name, descr, currency,
-                 category_id, image, brand):
+                 category_id, image, parameters, brand):
         self.company = company
         self.link = link
         self.offers = offers
@@ -13,6 +13,7 @@ class Params:
         self.currency = currency
         self.category_id = category_id
         self.image = image
+        self.parameters = parameters
         self.brand = brand
 
     def log(self):
@@ -28,5 +29,6 @@ class Params:
               f'currency: {self.currency}\n'
               f'category_id: {self.category_id}\n'
               f'image: {self.image}\n'
+              f'parameters: {self.parameters}\n'
               f'brand: {self.brand}\n'
               )
