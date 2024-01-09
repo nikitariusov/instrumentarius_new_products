@@ -23,6 +23,16 @@ def get_attr(elem_to_find, param_name):
         return None
 
 
+def get_images(element, xml_param_name):
+    """Получаем все картинки"""
+
+    images = []
+    img = element.findall(xml_param_name)
+    for i in img:
+        images.append(i.text)
+    return images
+
+
 def get_params(element, xml_param_name):
     """Получаем все характеристики"""
 
@@ -48,7 +58,7 @@ def read_xml(tree, param):
             get_attr(i, param.descr),
             get_attr(i, param.currency) or "UAH",
             get_attr(i, param.category_id),
-            get_attr(i, param.image),
+            get_images(i, param.image),
             get_params(i, param.parameters),
             get_attr(i, param.brand),
         ))
@@ -65,3 +75,4 @@ if __name__ == "__main__":
     offers = read_xml(tree, test_param)
     print(len(offers))
     offers[0].log()
+
