@@ -1,7 +1,7 @@
 import requests
 import xml.etree.ElementTree as ET
 from xls_parameters.main import get_settings
-from xml_.classes import Product_item
+from xml_.classes import Product_item, Categories
 from utils.utils import only_integer
 
 
@@ -65,14 +65,41 @@ def read_xml(tree, param):
     return offers
 
 
+def get_categories(tree, params):
+    categories = []
+    all_parent_cats = []
+    all_cats = tree.findall(params)
+
+    for i in all_cats:
+        parent_cat = i.get('parentId')
+        if parent_cat not in all_parent_cats:
+            all_parent_cats.append(parent_cat)
+
+    print(all_parent_cats)
+
+    for i in all_cats:
+        parent_id = i.get('parentId')
+        i_id = i.get('id')
+        categories.append(Categories(
+            i_id,
+            parent_id,
+            i.text,
+            i_id in all_parent_cats,
+        ))
+
+    return categories
+
+
 if __name__ == "__main__":
     test_param = get_settings()[0]
     test_link = test_param.link
     tree = load_xml_file(test_link)
-    print(tree)
-    print(test_param.log())
+    # print(tree)
+    # print(test_param.log())
 
     offers = read_xml(tree, test_param)
-    print(len(offers))
-    offers[0].log()
-
+    # print(len(offers))
+    # offers[0].log()
+    test_cats_param = "shop/catalog/category"
+    categories = get_categories(tree, test_cats_param)
+    print(categories[2].log())
